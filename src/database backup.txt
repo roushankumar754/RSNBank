@@ -1,0 +1,14 @@
+create database bankdb;
+use bankdb;
+create table Admin(username varchar(30)  primary key,password varchar(10) not null,Name varchar(50) not null,mobile_no bigint not null,dob date not null);
+insert into Admin(username,password, name,mobile_no,email_id,dob) values('rk@123','1234','Roushan','0123456789','rk@gmail.com','1947-08-15');
+create table employee(Name varchar(50),username varchar(50) primary key,Father_name varchar(30),Gender varchar(10),dob  date,Mobile_no bigint not null,Email_id  varchar(50) not null,address varchar(200),city varchar(20),state varchar(20),pin int not null,password varchar(50));
+
+
+
+create table customer(Ac_no int  primary key auto_increment,Name varchar(100),Father_name varchar(50),Gender varchar(10),dob  date,Mobile_no int not null,Email_id  varchar(50) not null,address varchar(200),city varchar(20),state varchar(20),pin int not null,password varchar(50),Username varchar(50));
+
+alter table customer auto_increment=10000;
+
+ create table emptransaction(tid bigint primary key auto_increment, tdate datetime,ac_no bigint,ttype char(2),
+username varchar(50),amount int);
